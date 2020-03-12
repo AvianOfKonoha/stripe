@@ -12,12 +12,12 @@
 </head>
 <body>
 <div class="container">
-  <h1>Hello</h1>
+  <h2 class="my-4 text-center">Intro to Payment [$50]</h2>
   <form action="./charge.php" method="post" id="payment-form">
     <div class="form-row">
-      <label for="card-element">
-        Credit or debit card
-      </label>
+      <input type="text" name="first_name" class="form-control mb-3 StripeElement StripeElement--empty" placeholder="First Name">
+      <input type="text" name="last_name" class="form-control mb-3 StripeElement StripeElement--empty" placeholder="Last Name">
+      <input name="email" type="email" class="form-control mb-3 StripeElement StripeElement--empty" placeholder="Email Address">
       <div id="card-element" class="form-control">
         <!-- A Stripe Element will be inserted here. -->
       </div>
@@ -30,7 +30,7 @@
   </form>
 </div>
 
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+
 <script src="https://js.stripe.com/v3/"></script>
 <script src="./js/charge.js"></script>
 </body>

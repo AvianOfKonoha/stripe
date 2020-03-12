@@ -12,6 +12,10 @@ var style = {
   }
 };
 
+//Style button with BS
+document.querySelector("#payment-form button").classList =
+  "btn btn-primary btn-block mt-4";
+
 // Create an instance of the card Element.
 var card = elements.create("card", { style: style });
 
@@ -22,7 +26,6 @@ card.mount("#card-element");
 var form = document.getElementById("payment-form");
 form.addEventListener("submit", function(event) {
   event.preventDefault();
-
   stripe.createToken(card).then(function(result) {
     if (result.error) {
       // Inform the customer that there was an error.
@@ -34,8 +37,6 @@ form.addEventListener("submit", function(event) {
     }
   });
 });
-
-
 
 function stripeTokenHandler(token) {
   // Insert the token ID into the form so it gets submitted to the server
