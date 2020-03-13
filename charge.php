@@ -22,8 +22,10 @@ $charge = \Stripe\Charge::create([
   'amount' => 5000,
   'currency' => 'eur',
   'description' => 'Intro to Payment',
-  'customer' => $customer->id
+  'customer' => $customer->id,
 ]);
 
+
 //Redirect to Success
-header(`Location: success.php?tid={$charge->id}&product=${$charge->description}`);
+header('Location: success.php?tid="'.$charge->id.'"&product="'.$charge->description.'"');
+
